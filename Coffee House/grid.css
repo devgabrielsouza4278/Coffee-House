@@ -1,0 +1,350 @@
+    /* FLEXBOX */
+
+    .flex { 
+        box-shadow: 0px 5px  10px 0px  rgb(2, 2, 2);    
+        padding: 10px;
+        margin-right: 10%;
+        margin-left: 10%; 
+        font-weight: bold;     
+        justify-content: space-between;      
+        align-items: stretch;
+        text-align: center;               
+        background-color: rgba(248, 248, 248, 0.842);         
+        margin-bottom: 80px;
+        display: flex; 
+        flex-wrap: wrap;   
+    }
+
+    .flex>div {
+        box-shadow: 0px 5px  10px 0px  rgb(173, 167, 167); 
+        display: block;  
+        flex: 1 1 150px;       
+        margin: 10px;    
+    } 
+
+    .história-café {  
+        padding: 20px;  
+        font-weight: bold;        
+        display: flex; 
+        justify-content: space-between;  
+    }
+    
+
+
+
+
+    /* GRID LAYOUT */
+
+    #principal {
+
+        grid-row-gap: 5px;
+        grid-column-gap: 10px;
+        display: grid;  
+    }
+
+    #logo { 
+        grid-column: 2/3;
+    }
+
+    #menu {
+        grid-column: 1/4;    
+    }
+
+    #titulo {
+        grid-column: 3;
+    }
+
+    #content {  
+        box-shadow: 0px 5px  10px 0px  rgb(173, 167, 167);   
+        min-width: 200px; 
+        grid-column: 1/4 ;
+        grid-row: 3;        
+    }
+
+    #rodapé {
+        grid-column: 1/4;
+        grid-row: 4; 
+    }
+
+
+
+    /* RESPONSIVIDADE */
+    
+    @media only screen and (max-width:966px) { 
+
+        .flex p, .flex, .história-café    {            
+            display: block;
+        } 
+
+        .história-café p {
+            display: flex;
+            max-width: 100%;       
+        }  
+
+
+        /*MENU HAMBURGUER  */
+        .one, .two, .three {
+            background-color: black;
+            height: 8px;
+            width: 100%;
+            margin: 6px auto;
+            transition-duration: 0.5s;
+        }
+
+        .menu-toggle{
+            width: 60px;
+            height: 40px;
+            margin-right: 20px;
+        }
+
+
+        /* MENU HAMBURGUER FULL-SCREEN */
+
+        
+        .menu.on {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: white;
+            z-index: 10;
+            transition-duration: 1.5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu.on ul {
+            display: block;
+            text-align: center; 
+        }
+
+        .menu.on .menu-toggle {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+        }
+
+        .menu.on .menu-toggle .one {
+            transform: rotate(45deg) translate(7px,7px);
+        }
+
+        .menu.on .menu-toggle .two {
+            opacity: 0;
+        }
+
+        .menu.on .menu-toggle .three {
+            transform: rotate(-45deg) translate(13px,-14px);
+        }
+
+        .menu.on p {
+            display: none;
+        }
+    
+        .menu.on ul li {
+            display: block;
+            text-align: center;
+            line-height: 4rem;
+        }
+
+        .menu.on li a {
+            font-size: 1.5em;
+        }
+
+        .menu ul {
+            display: none;
+        }
+
+        .menu p {
+            width: auto;
+        }
+    }
+    
+
+
+    /* MOBILE */
+    
+    @media only screen and (max-device-width: 770px)  {
+        
+        
+        /*MENU HAMBURGUER  */
+        .one, .two, .three {
+            background-color: black;
+            height: 8px;
+            width: 100%;
+            margin: 6px auto;
+            transition-duration: 0.5s;
+        }
+
+        .menu-toggle{
+            width: 60px;
+            height: 40px;
+            margin-right: 20px;
+        }
+
+
+        /* MENU HAMBURGUER FULL-SCREEN */
+        
+        .menu.on {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: white;
+            transition-duration: 10s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: menu-SlideUp forwards 0.5s;
+            
+        }
+        
+        .menu.on ul {
+            display: block;
+            text-align: center;
+            
+        }
+
+        .menu.on .menu-toggle {
+            position: absolute;
+            right: 0px;
+            top: 50px;
+            
+            
+        }
+
+        .menu.on .menu-toggle .one {
+        
+            transform: rotate(45deg) translate(7px,7px);
+        }
+
+        .menu.on .menu-toggle .two {
+            opacity: 0;
+        }
+
+        .menu.on .menu-toggle .three {
+            transform: rotate(-45deg) translate(13px,-14px);
+        }
+
+        .menu.on p {
+            display: none;
+        } 
+
+        .menu.on ul li {
+            display: block;
+            text-align: center;
+            line-height: 4rem;
+        }
+
+        .menu.on li a {
+            font-size: 1.5em;
+        }
+
+        .menu ul {
+            display: none;
+        }
+
+        .menu li  {
+            display: inline;         
+            font-size: 3vw;    
+        }
+
+        .menu p {
+            font-size: 2em;
+            width: auto;
+            margin-left: 10px;
+        }
+
+        /* FIM MENU */
+
+
+        
+        
+        /* CONTENT */
+ 
+        
+        .titulo {
+            margin-top: 10%;
+            font-size: 2.5em;
+        }
+       
+        
+        .logo  {
+            width: 550px; 
+            height: 500px;
+        }        
+        
+        .flex {
+            flex-direction: column;
+            margin-left: 0;
+            margin-right: 0;
+            margin: 0 auto; 
+        } 
+
+        .flex >div {
+            padding: 20px;
+        }
+        
+        .flex img {
+            max-width: 30vw;
+            height: 25vw;  
+        }
+
+        .flex h3 {
+            text-align:center;
+            font-size: 2em;
+        } 
+
+        .flex p {
+            text-align: justify;
+            margin: 10px auto;
+            width: auto;
+            max-width: 80%;     
+        }
+
+        .flex p::before {
+            margin-right:  30px
+        }
+
+        .cafés p, .grãos p, .história-café p { 
+            font-size: 1.7em;
+        } 
+        
+        .história-café {
+            flex-direction: row;
+        }
+
+        .história-café img {
+            width: auto;
+            min-width: 250px;
+            max-width: 400px;  
+        } 
+        
+        .história-café p  {  
+            max-width: 450px;
+            max-height: 500px;
+            width:  auto; 
+            height: auto;        
+        }
+
+        .contato li a img, .contato li img  {
+    
+            width: 62px;
+            height: 62px;
+        }
+        
+        .contato li  img:hover {
+            transform: none;
+        }
+
+        .rodapé p { 
+            font-size: 1.7rem;
+        }
+
+    }
+
+    
+
+
